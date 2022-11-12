@@ -42,8 +42,8 @@ body {
     display: block;
     margin: 0 2px 50px;
     min-width: 8px;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background: #fff;
     animation: vapour 5s linear infinite;
     filter: blur(8px);
@@ -51,12 +51,47 @@ body {
     transform: rotate(-45deg);
 }
 
+.big-heart {
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 2px 50px;
+    min-width: 8px;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    animation: pulse 2s linear infinite;
+    filter: blur(8px);
+    transform: rotate(-45deg);
+}
+.big-heart::after {
+    content: "";
+    border-radius: 50%;
+    background-color: inherit;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: -50%;
+    left: 0;
+}
+
+.big-heart::before {
+    content: "";
+    border-radius: 50%;
+    background-color: inherit;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 50%;
+}
+
 .vapour span::after {
     content: "";
     border-radius: 50%;
     background-color: inherit;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     position: absolute;
     top: -50%;
     left: 0;
@@ -66,8 +101,8 @@ body {
     content: "";
     background-color: inherit;
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     position: absolute;
     top: 0;
     right: -50%;
@@ -89,5 +124,43 @@ body {
     }
     100% {
         transform: translateY(-300px) scaleX(1) rotate(-45deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scaleX(1) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        transform: scaleX(0.9) rotate(45deg);
+        opacity: 1;
+    }
+    20% {
+        transform: scaleX(1) rotate(45deg);
+        opacity: 0.5;
+    }
+    30% {
+        transform: scaleX(1.05) rotate(45deg);
+        opacity: 0.9;
+    }
+    40% {
+        transform: scaleX(1) rotate(45deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scaleX(0.95) rotate(45deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scaleX(0.95) rotate(45deg);
+        opacity: 1;
+    }
+    95% {
+        transform: scaleX(0.95) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1) rotate(45deg);
     }
 }
